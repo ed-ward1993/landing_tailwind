@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+    <style>
+
+  .custom-title span:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .custom-title span:nth-child(2) {
+    animation-delay: 1.5s;
+  }
+
+  .custom-title span:nth-child(3) {
+    animation-delay: 2s;
+  }
+    
+      @keyframes rotateItems {
+         0% {
+      transform: rotate(0deg) translate(100px) rotate(0deg);
+    }
+    16.666% {
+      transform: rotate(60deg) translate(100px) rotate(-60deg);
+    }
+    33.333% {
+      transform: rotate(120deg) translate(100px) rotate(-120deg);
+    }
+    50% {
+      transform: rotate(180deg) translate(100px) rotate(-180deg);
+    }
+    66.666% {
+      transform: rotate(240deg) translate(100px) rotate(-240deg);
+    }
+    83.333% {
+      transform: rotate(300deg) translate(100px) rotate(-300deg);
+    }
+    100% {
+      transform: rotate(360deg) translate(100px) rotate(-360deg);
+    }
+      }
+      .circle-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 400px; /* Ajusta la altura del círculo */
+        position: relative;
+        background: yellowgreen;
+      }
+    
+      .circle-item {
+        position: absolute;
+        width: 40px; /* Ajusta el tamaño de cada elemento */
+        height: 60px; /* Ajusta el tamaño de cada elemento */
+        border-radius: 50%;
+        text-align: center;
+        line-height: 30px;
+        font-size: 12px;
+        transform-origin: center center;
+        margin-top: -5px;
+
+      }
+      .card-band {         
+          border-bottom: 4px solid #22325F; 
+          /* border-top: 2px solid #FFD700; 
+          border-left: 2px solid #FFD700; 
+          border-right: 2px solid #FFD700;  */
+          
+        }
+
+      .custom-title {
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .custom-subtitle {
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+      
+     /* puntos suspensivos  */
+     @keyframes dotAppear {
+    0% {
+      opacity: 0;
+    }
+    33.33% {
+      opacity: 1;
+    }
+    66.66% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .custom-title span {
+    display: inline-block;
+    animation: dotAppear 2.5s infinite;
+  }
+
+  .custom-title span:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .custom-title span:nth-child(2) {
+    animation-delay: 1.5s;
+  }
+
+  .custom-title span:nth-child(3) {
+    animation-delay: 2s;
+  }
+  .social-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.social-icon:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.1);
+}
+
+.fa-instagram,
+.fa-facebook,
+.fa-tiktok {
+  font-size: 20px;
+}
+     
+    </style>
+</head>
+<body>
+   <div class="">
+    <!-- <header class="fixed inset-x-0 top-0 z-50 bg-[#002F65] "> -->
+      <header class="fixed inset-x-0 top-0 z-50 bg-gradient-to-r from-[#22325F] to-[#4D477C]">
+      <nav class="flex items-center justify-between p-2 lg:px-8" aria-label="Global">
+            <div class="grid grid-cols-4 gap-3 divide-x-2 divide-yellow-300 ">
+              <a href="#" class="-m-1.5 p-1.5 ml-14 ">
+                <img class="h-12 w-auto" src="../src/img/logo_RUC.png" alt="">
+              </a>
+              <div class="col-span-2 flex justify-center items-center" >
+                <div  class="ml-5 text-base text-yellow-400 font-medium">
+                  REGISTRO UNICO DE CONTRIBUYENTES
+                </div>
+                
+              </div>
+            </div>
+            <div class="flex lg:hidden">
+              <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                <span class="sr-only">Open main menu</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+              </button>
+            </div>
+            <!-- <div class="hidden lg:flex lg:gap-x-1">
+              <a href="#" class="text-sm font-semibold leading-6 text-gray-50">Product</a>
+            </div> -->
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end space-x-2 mr-6">
+              <button type="button" class="btn_principal">
+                <span class="sr-only">Iniciar sesión</span>
+              Iniciar sesión
+              </button>
+             
+              <button type="button" class="btn_principal">
+                <span class="sr-only">resgistrate</span>
+              Registrate
+              </button>
+            </div>
+          </nav>
+          <!-- Mobile menu, show/hide based on menu open state. -->
+          <div class="lg:hidden" role="dialog" aria-modal="true">
+            <!-- Background backdrop, show/hide based on slide-over state. -->
+            <div class="fixed inset-0 z-50"></div>
+            <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+              <div class="flex items-center justify-between">
+               
+                <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                  <span class="sr-only">Close menu</span>
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <div class="mt-6 flow-root">
+                <div class="-my-6 divide-y divide-gray-500/10">
+                  <div class="space-y-2 py-6">
+                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Product</a>
+                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
+                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>
+                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
+                  </div>
+                  <div class="hidden lg:flex lg:flex-1 lg:justify-end space-x-2 mr-6">
+                    <button type="button" class="btn_principal">
+                      <span class="sr-only">Iniciar sesión</span>
+                    Iniciar sesión
+                    </button>
+                    <button type="button" class="btn_principal">
+                      <span class="sr-only">resgistrate</span>
+                    Registrate
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="relative pt-16 pb-32 flex mt-16">
+         
+        <div
+          class="absolute top-0 w-full h-full bg-center bg-cover"
+          style="background-image: url('../src/img/fondo_RUC.png');"
+        >
+          <span
+            id="blackOverlay"
+            class="w-full h-full absolute opacity-75 bg-black"
+          ></span>
+        </div>
+        <div class="container relative mx-auto">
+          <div class="items-center flex flex-wrap">
+            <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
+              <div class="pr-12 centrar flex-col">
+                <!-- <div class="w-64 centrar">
+                  <div class="relative rounded-full px-3 py-1 leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20 mb-5 flex">
+                    <h1 class="text-lg font-medium centrar font-lemonada">
+                      Instructivo. 
+                    </h1>
+                    <a href="#" class="font-semibold text-indigo-600 p-2 flex">
+                      <span class="absolute inset-0" aria-hidden="true"></span>Leer mas <span aria-hidden="true">&rarr;</span>
+                    </a>
+                  </div>
+                </div> -->
+                
+                <div class="centrar flex-col">
+                  <h1 class="text-2xl font-bold tracking-tight text-gray-700 sm:text-6xl custom-title font-oswald">Regístrate </h1>
+                  <h1 class="text-2xl font-bold tracking-tight text-gray-700 sm:text-6xl custom-title font-oswald">
+                   Conoce Más <span>.</span><span>.</span><span>.</span>
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>      
+      </div>
+      <div class="text-center mx-auto max-w-5xl">                 
+
+        <!-- contenedor de card  -->
+        <div class="w-full centrar">
+          <div class="container centrar">                 
+            <div class="w-full  ml-auto mr-auto px-4 ">
+              <div class="text-center centrar">
+                <div class="max-w-2xl">
+                  <p class="mt-6 text-lg leading-8 text-gray-600 font-semibold">  De esta plataforma donde los contribuyentes pueden validar sus pagos y deudas en cualquiera de los impuestos.</p>
+                </div>
+             
+
+              </div>
+              
+              <div class="centrar h-80 2xl:h-96 p-10 ml-4">
+
+                <div class="circle-item ">
+                  <div class="h-10 w-16 centrar ">
+                    <img alt="..." src="../src/img/vaca.png" />
+                  </div>
+                  <div class="w-16">
+                    <span class="text-xs font-medium ">Deguello</span>
+                  </div>
+                </div>
+                <div class="circle-item">
+                  <div class="h-16 w-16 centrar ">
+                    <img alt="..." src="../src/img/registro.png" />
+                  </div>
+                  <div class="w-16 -mt-2">
+                    <span class="text-xs font-medium">Registro</span>
+                  </div>
+                </div>
+                <div class="circle-item">
+                  <div class="h-8 w-16 ">
+                    <img alt="..." src="../src/img/vehiculos.png" />
+                  </div>
+                  <div class="w-16 -mt-3">
+                    <span class="text-xs font-medium">Vehiculos</span>
+                  </div>
+                </div>
+                <div class="circle-item">
+                  <div class="h-16 w-16 centrar ">
+                    <img alt="..." src="../src/img/monedas.png" />
+                  </div>
+                  <div class="w-12 -mt-1">
+                    <span class="text-xs font-medium">Sobretasa</span>
+                  </div>
+                </div>
+                <div class="circle-item">
+                  <div class="h-16 w-16 centrar ">
+                    <img alt="..." src="../src/img/tiquetes.png" />
+                  </div>
+                  <div class="w-16 -mt-2">
+                    <span class="text-xs font-medium">Estampillas</span>
+                  </div>
+                </div>
+                <div class="circle-item">
+                  <div class="h-16 w-16 centrar">
+                    <img alt="..." src="../src/img/dinero.png" />
+                  </div>
+                  <div class="w-16 ">
+                    <span class="text-xs font-medium">Loteria</span>
+                  </div>
+                </div>
+
+
+              </div>
+
+                <div class="w-full h-1 bg-yellow-200 mb-3">
+                </div>  
+                <div class="mt-0 text-lg leading-8 text-gray-600 font-semibold mb-10">
+                  Tolima y Boyacá
+                </div>     
+            </div>
+                   
+          </div>              
+        </div>
+        <!-- fin del contenedor  -->
+
+        <div class="w-full bg-red-200">
+        <hr class="my-3 "  />
+
+          <div class="flex-col ml-52 w-full centrar ">
+            <h1 class="mt-10 mb-6 text-5xl leading-8 text-gray-600 font-semibold custom-subtitle font-oswald"> Objetivo </h1>
+            <div class="centrar mb-10">
+              <div class="max-w-2xl">
+                <p class="mt-6 text-lg leading-8 text-gray-600 font-semibold">  La plataforma de registro unico de contribuyentes tiene el fin de facilitar a los contribuyentes y tramitadores, la validacion del pago de sus impuestos. Además, a través del registro se crea un historial que permite conocer cuántos contribuyentes hay según el impuesto y departamento.</p>
+              </div>
+            </div>  
+            <div class="flex flex-col items-center transition-transform transform hover:-translate-y-1 w-auto p-2 ">
+              <div class="h-64 w-96">
+                <img
+                alt="..."
+                src="../src/img/Nubes.png"
+              />            
+              </div>                              
+          </div> 
+          </div> 
+        </div>
+              
+
+      </div>
+   
+        <footer class="relative mb-5">
+         
+          <div class="container mx-auto px-4">
+            <div class="flex flex-wrap text-center lg:text-left">
+              <div class="w-full lg:w-6/12 px-4">             
+                <div class="fixed right-0 top-1/2 transform -translate-y-1/2 flex flex-col items-center z-50 p-3 bg-[#22325F] rounded-lg">
+                  <button id="downloadButton" class="social-icon bg-[#F4E45B] shadow-lg rounded-full outline-none focus:outline-none mb-2">
+                    <i class="fa-solid fa-download text-[#22325F]"></i>
+                  </button>
+                  <!-- <button class="social-icon bg-[#F4E45B] shadow-lg rounded-full outline-none focus:outline-none mb-2">
+                    <i class="fa-brands fa-facebook text-[#22325F]"></i>
+                  </button>
+                  <button class="social-icon bg-[#F4E45B] shadow-lg rounded-full outline-none focus:outline-none">
+                    <i class="fa-brands fa-tiktok text-[#22325F]"></i>
+                  </button> -->
+                </div>  
+              </div>
+             
+            </div>
+            <hr class="my-3" />
+            <div
+              class="flex flex-wrap items-center md:justify-between justify-center"
+            >
+              <div class="w-full md:w-4/12 px-4 mx-auto text-center flex flex-col centrar">
+                <div class="text-sm text-blueGray-500 font-semibold py-1">
+                  Copyright © <span id="get-current-year"></span> Desarrollado por.
+                </div>
+                <div>
+                  <a href="https://www.turrisystem.com/web/g" target="_blank"
+                  class="text-blueGray-500 hover:text-blueGray-800">
+                  <img src="/src/svg/turrisystem_negro.svg" alt="" class="object-contain w-32">
+                  </a>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </footer>
+        <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
+          <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+        </div>
+      </div>
+     
+      <script>
+        const circleItems = document.querySelectorAll('.circle-item');
+        const totalItems = circleItems.length;
+        let radius = window.innerWidth < 1600 ? 108 : 135;
+
+        let angle = 0;
+        const rotationSpeed = 0.2; // Ajusta la velocidad de rotación
+
+        setInterval(() => {
+          circleItems.forEach((item, index) => {
+            const itemAngle = (360 / totalItems) * index;
+            const x = radius * Math.cos((angle + itemAngle) * (Math.PI / 180));
+            const y = radius * Math.sin((angle + itemAngle) * (Math.PI / 180));
+            item.style.transform = `translate(${x}px, ${y}px)`;
+          });
+          angle += rotationSpeed;
+        }, 30);
+
+        // Actualizar el valor del radio al cambiar el tamaño de la ventana
+        window.addEventListener('resize', () => {
+          radius = window.innerWidth < 1600 ? 108 : 135;
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+          const downloadButton = document.getElementById('downloadButton');
+          const pdfSrc = '../src/docs/manual_RUC.pdf';
+
+          downloadButton.addEventListener('click', function () {
+            // Crea un elemento de enlace temporal para la descarga
+            const link = document.createElement('a');
+            link.href = pdfSrc;
+            link.download = 'instructivo.pdf';
+
+            // Simula un clic en el enlace para iniciar la descarga
+            link.click();
+          });
+        });
+    </script> 
+   
+</body>
+</html>
